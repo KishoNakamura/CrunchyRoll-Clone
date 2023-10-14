@@ -1,0 +1,53 @@
+:root {
+  --primary: #f47521;
+  --secondary: DeepSkyBlue;
+  --black: #23252b;
+  --blackDarken: #151212;
+  --blue: #2abdbb;
+  --white: #FFF;
+  --gray: #dadada;
+  --grayDarken: #a0a0a0;
+  --yellow: #fab818;
+  --yellowHover: #f8c651;
+  --main-font: 'Lato', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--main-font);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+
+svg, a, button {
+  display: block;
+}
