@@ -7,8 +7,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Header from "./components/header";
 import rootStyles from "./styles/root.css";
-import faviconCrunchyLogo from "../public/img/favicon-32x32-CrunchyLogo.png"
+import headerStyles from "./styles/header.css";
+import faviconCrunchyLogo from "../public/img/favicon-32x32-CrunchyLogo.png";
 
 export const links = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -34,6 +36,10 @@ export const links = () => [
     href: rootStyles
   },
   {
+    rel: "stylesheet",
+    href: headerStyles
+  },
+  {
     rel: 'icon',
     type: 'image/png',
     sizes: '32x32',
@@ -51,6 +57,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

@@ -51,3 +51,8 @@ button {
 svg, a, button {
   display: block;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+}

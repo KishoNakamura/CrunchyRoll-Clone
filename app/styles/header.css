@@ -1,0 +1,79 @@
+.header {
+  background-color: var(--black);
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* * lOGOS AND SVG */
+
+.logo-mobile, .svg-icon {
+  fill: var(--gray);
+  width: 2.4rem;
+}
+
+.logo-desktop {
+  width: 15.6rem;
+  display: none;
+}
+
+@media (min-width: 768px){
+  .logo-desktop {
+    display: block;
+  }
+
+  .logo-mobile {
+    display: none;
+  }
+}
+
+.logo-desktop,
+.logo-mobile {
+  fill: var(--primary);
+  transition-property: fill;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+
+  &:hover {
+    fill: var(--white);
+    cursor: pointer;
+  }
+}
+
+/* * BOTONES */ 
+
+.btn-nav {
+  color: var(--gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.8rem;
+
+  &:hover {
+    background-color: var(--blackDarken);
+  }
+}
+
+/* * MOBILE MENU */
+
+
+
+/* * NAVEGATION */
+
+.navegation {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@media (min-width: 1024px){
+  .navegation {
+    justify-content: space-between;
+  }
+}
