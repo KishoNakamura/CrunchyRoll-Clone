@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { useState } from "react";
 import Header from "./components/header";
 import rootStyles from "./styles/root.css";
 import headerStyles from "./styles/header.css";
@@ -48,6 +49,27 @@ export const links = () => [
 ];
 
 export default function App() {
+
+  const [showMenu, setShowMenu] = useState(false)
+  const [showDropBoxGenres, setShowDropBoxGenres] = useState(false)
+  const [showDropBoxNews, setShowDropBoxNews] = useState(false)
+
+  const ToogleShowMenu = () => {
+    showMenu ? setShowMenu(false) : setShowMenu(true)
+    setShowDropBoxNews(false)
+    setShowDropBoxGenres(false)
+  }
+
+  const ToogleDropBoxGenres = () => {
+    showDropBoxGenres ? setShowDropBoxGenres(false) : setShowDropBoxGenres(true);
+    setShowDropBoxNews(false)
+  }
+
+  const ToogleDropBoxNews = () => {
+    showDropBoxNews ? setShowDropBoxNews(false) : setShowDropBoxNews(true);
+    setShowDropBoxGenres(false)
+  }
+
   return (
     <html lang="en">
       <head>
@@ -56,8 +78,15 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Header />
+      <body className={showMenu ? 'sbmn-open' : ''}>
+        <Header
+          showMenu={showMenu}
+          ToogleShowMenu={ToogleShowMenu}
+          showDropBoxGenres={showDropBoxGenres}
+          ToogleDropBoxGenres={ToogleDropBoxGenres}
+          showDropBoxNews={showDropBoxNews}
+          ToogleDropBoxNews={ToogleDropBoxNews}
+        />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

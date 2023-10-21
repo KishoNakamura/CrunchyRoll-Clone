@@ -3,13 +3,27 @@ import HeaderNavGeneral from "./headerNavGeneral"
 import HeaderNavLogin from "./headerNavLogin"
 import HeaderMobileMenu from "./headerMobileMenu"
 
-export default function Header() {
+export default function Header({
+  showMenu,
+  ToogleShowMenu,
+  showDropBoxGenres, 
+  ToogleDropBoxGenres, 
+  showDropBoxNews, 
+  ToogleDropBoxNews
+}) {
   return (
     <header className="header">
       <div className="header__container">
 
         {/* Mobile/Tablet Menu */}
-        <HeaderMobileMenu />
+        <HeaderMobileMenu
+          showMenu={showMenu}
+          ToogleShowMenu={ToogleShowMenu}
+          showDropBoxGenres={showDropBoxGenres}
+          ToogleDropBoxGenres={ToogleDropBoxGenres}
+          showDropBoxNews={showDropBoxNews}
+          ToogleDropBoxNews={ToogleDropBoxNews}
+        />
 
         {/* Mobile/Desktop Logos */}
         <div>

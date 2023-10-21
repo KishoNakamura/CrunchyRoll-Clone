@@ -19,11 +19,11 @@
 }
 
 .logo-desktop {
-  width: 15.6rem;
+  width: 13.6rem;
   display: none;
 }
 
-@media (min-width: 768px){
+@media (min-width: 570px){
   .logo-desktop {
     display: block;
   }
@@ -46,23 +46,6 @@
   }
 }
 
-/* * BOTONES */ 
-
-.btn-nav {
-  color: var(--gray);
-  font-size: 1.6rem;
-  font-weight: 400;
-  padding: 1.8rem;
-
-  &:hover {
-    background-color: var(--blackDarken);
-  }
-}
-
-/* * MOBILE MENU */
-
-
-
 /* * NAVEGATION */
 
 .navegation {
@@ -76,4 +59,116 @@
   .navegation {
     justify-content: space-between;
   }
+}
+
+/* * BOTONES */ 
+
+.btn-nav {
+  color: var(--gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.8rem;
+
+  &:hover {
+    background-color: var(--blackDarken);
+  }
+}
+
+.btn-nav.selected {
+  background-color: var(--blackDarken);
+  color: var(--white);
+}
+
+/* * SUBMENU */
+
+.sbmn {
+  display: none;
+  position: absolute;
+  background-color: var(--blackDarken);
+
+  &.sbmn-show {
+    display: block;
+  }
+}
+
+/* * MOBILE MENU */
+
+@media (min-width: 1024px){
+    .mobile-menu {
+      display: none;
+    }
+}
+
+.sbmn-mobile-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+@media (min-width: 570px){
+  .sbmn-mobile-menu {
+    width: auto;
+  }
+}
+
+.heading-mobile-menu {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading-small);
+  text-transform: uppercase;
+}
+
+.line-mobile-menu {
+  margin-top: 1rem;
+  border-top: .2rem solid var(--black);
+}
+
+.btn-mobile-menu > li:active,
+.dropbox-list li:active {
+  background-color: #000;
+}
+
+.btn-mobile-menu > li:hover {
+  background-color: var(--black);
+}
+
+.btn-mobile-menu li a,
+.dropbox-btn {
+  padding: 1.2rem 1.8rem;
+  font-size: 1.6rem;
+  width: 30rem;
+  color: var(--white);
+}
+
+.dropbox-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .svg-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.dropbox-list {
+  background-color: var(--bg-mobile-dropbox);
+  display: none;
+
+  &.dropbox-show {
+    display: block;
+  }
+}
+
+.dropbox-list li:hover {
+  background-color: var(--black);
+}
+
+.dropbox-list li a {
+  font-size: 1.4rem;
+  padding: 1.4rem 3.8rem;
+  color: var(--gray);
 }
