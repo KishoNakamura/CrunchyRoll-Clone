@@ -2,13 +2,16 @@
   --primary: #f47521;
   --secondary: DeepSkyBlue;
   --black: #23252b;
-  --blackDarken: #151212;
+  --blackDarken: #141519;
   --blue: #2abdbb;
   --white: #FFF;
   --gray: #dadada;
   --grayDarken: #a0a0a0;
   --yellow: #fab818;
   --yellowHover: #f8c651;
+  --heading-small: rgb(160, 160, 160);
+  --bg-mobile-dropbox: rgba(74, 78, 88, 0.5);
+  --scrollbar: #59595b;
   --main-font: 'Lato', sans-serif;
 }
 
@@ -25,6 +28,11 @@ body {
   font-size: 1.6rem;
   font-family: var(--main-font);
   line-height: 1.5;
+
+  &.sbmn-open {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 img {
@@ -55,4 +63,23 @@ svg, a, button {
 p {
   margin: 0;
   padding: 0;
+}
+
+/* * CUSTOMIZATION OF THE SCROLL BAR */
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border: 0.3rem solid var(--black);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
