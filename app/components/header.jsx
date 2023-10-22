@@ -4,8 +4,10 @@ import HeaderNavLogin from "./headerNavLogin"
 import HeaderMobileMenu from "./headerMobileMenu"
 
 export default function Header({
-  showMenu,
-  ToogleShowMenu,
+  showBrowseMenu,
+  ToogleShowBrowseMenu,
+  showNewsMenu,
+  ToogleShowNewsMenu,
   showDropBoxGenres, 
   ToogleDropBoxGenres, 
   showDropBoxNews, 
@@ -17,8 +19,10 @@ export default function Header({
 
         {/* Mobile/Tablet Menu */}
         <HeaderMobileMenu
-          showMenu={showMenu}
-          ToogleShowMenu={ToogleShowMenu}
+          showBrowseMenu={showBrowseMenu}
+          ToogleShowBrowseMenu={ToogleShowBrowseMenu}
+          showNewsMenu={showNewsMenu}
+          ToogleShowNewsMenu={ToogleShowNewsMenu}
           showDropBoxGenres={showDropBoxGenres}
           ToogleDropBoxGenres={ToogleDropBoxGenres}
           showDropBoxNews={showDropBoxNews}
@@ -45,7 +49,12 @@ export default function Header({
 
         {/* Main Navegation */}
         <nav className="navegation">
-          <HeaderNavGeneral />
+          <HeaderNavGeneral 
+            showBrowseMenu={showBrowseMenu}
+            ToogleShowBrowseMenu={ToogleShowBrowseMenu}
+            showNewsMenu={showNewsMenu}
+            ToogleShowNewsMenu={ToogleShowNewsMenu}
+          />
           <HeaderNavLogin />
         </nav>
       </div>

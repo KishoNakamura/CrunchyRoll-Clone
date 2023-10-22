@@ -50,12 +50,21 @@ export const links = () => [
 
 export default function App() {
 
-  const [showMenu, setShowMenu] = useState(false)
+  const [showBrowseMenu, setShowBrowseMenu] = useState(false)
+  const [showNewsMenu, setShowNewsMenu] = useState(false)
   const [showDropBoxGenres, setShowDropBoxGenres] = useState(false)
   const [showDropBoxNews, setShowDropBoxNews] = useState(false)
 
-  const ToogleShowMenu = () => {
-    showMenu ? setShowMenu(false) : setShowMenu(true)
+  const ToogleShowBrowseMenu = () => {
+    showBrowseMenu ? setShowBrowseMenu(false) : setShowBrowseMenu(true)
+    setShowNewsMenu(false)
+    setShowDropBoxNews(false)
+    setShowDropBoxGenres(false)
+  }
+
+  const ToogleShowNewsMenu = () => {
+    showNewsMenu ? setShowNewsMenu(false) : setShowNewsMenu(true)
+    setShowBrowseMenu(false)
     setShowDropBoxNews(false)
     setShowDropBoxGenres(false)
   }
@@ -78,10 +87,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className={showMenu ? 'sbmn-open' : ''}>
+      <body className={(showBrowseMenu || showNewsMenu) ? 'sbmn-open' : ''}>
         <Header
-          showMenu={showMenu}
-          ToogleShowMenu={ToogleShowMenu}
+          showBrowseMenu={showBrowseMenu}
+          ToogleShowBrowseMenu={ToogleShowBrowseMenu}
+          showNewsMenu={showNewsMenu}
+          ToogleShowNewsMenu={ToogleShowNewsMenu}
           showDropBoxGenres={showDropBoxGenres}
           ToogleDropBoxGenres={ToogleDropBoxGenres}
           showDropBoxNews={showDropBoxNews}
