@@ -4,8 +4,10 @@ import HeaderLinksGenders from "./headerLinksGenders"
 import HeaderLinksNews from "./headerLinksNews"
 
 export default function HeaderMobileMenu({
-  showMenu, 
-  ToogleShowMenu, 
+  showBrowseMenu,
+  ToogleShowBrowseMenu,
+  showNewsMenu,
+  ToogleShowNewsMenu,
   showDropBoxGenres, 
   ToogleDropBoxGenres, 
   showDropBoxNews, 
@@ -15,8 +17,8 @@ export default function HeaderMobileMenu({
     <ul className="mobile-menu">
       <li>
         <button
-          className={`btn-nav ${showMenu ? 'selected' : ''}`}
-          onClick={ToogleShowMenu}
+          className={`btn-nav ${(showBrowseMenu || showNewsMenu) ? 'selected' : ''}`}
+          onClick={showNewsMenu ? ToogleShowNewsMenu : ToogleShowBrowseMenu}
         >
           <svg className="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="menu-svg" aria-labelledby="menu-svg" aria-hidden="true" role="img"
           >
@@ -26,7 +28,7 @@ export default function HeaderMobileMenu({
         </button>
 
         {/* Menu that will appear when the button above is click it */}
-        <ul className={`sbmn-mobile-menu sbmn ${showMenu ? 'sbmn-show' : ''}`}>
+        <ul className={`sbmn-mobile-menu sbmn ${(showBrowseMenu || showNewsMenu) ? 'sbmn-show' : ''}`}>
           <li><p className="heading-mobile-menu">Browse</p></li>
           <li>
             <ul className="btn-mobile-menu">
