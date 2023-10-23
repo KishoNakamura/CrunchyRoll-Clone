@@ -54,6 +54,8 @@ export default function App() {
   const [showNewsMenu, setShowNewsMenu] = useState(false)
   const [showDropBoxGenres, setShowDropBoxGenres] = useState(false)
   const [showDropBoxNews, setShowDropBoxNews] = useState(false)
+  const [showAccount, setShowAccount] = useState(false)
+  const [isUserLogin, setIsUserLogin] = useState(false)
 
   const ToogleShowBrowseMenu = () => {
     showBrowseMenu ? setShowBrowseMenu(false) : setShowBrowseMenu(true)
@@ -79,6 +81,14 @@ export default function App() {
     setShowDropBoxGenres(false)
   }
 
+  const ToogleShowAccount = () => {
+    showAccount ? setShowAccount(false) : setShowAccount(true)
+    setShowNewsMenu(false)
+    setShowBrowseMenu(false)
+    setShowDropBoxNews(false)
+    setShowDropBoxGenres(false)
+  }
+
   return (
     <html lang="en">
       <head>
@@ -87,7 +97,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className={(showBrowseMenu || showNewsMenu) ? 'sbmn-open' : ''}>
+      <body className={(showBrowseMenu || showNewsMenu || showAccount) ? 'sbmn-open' : ''}>
         <Header
           showBrowseMenu={showBrowseMenu}
           ToogleShowBrowseMenu={ToogleShowBrowseMenu}
@@ -97,6 +107,9 @@ export default function App() {
           ToogleDropBoxGenres={ToogleDropBoxGenres}
           showDropBoxNews={showDropBoxNews}
           ToogleDropBoxNews={ToogleDropBoxNews}
+          showAccount={showAccount}
+          ToogleShowAccount={ToogleShowAccount}
+          isUserLogin={isUserLogin}
         />
         <Outlet />
         <ScrollRestoration />

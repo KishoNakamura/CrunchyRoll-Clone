@@ -11,7 +11,10 @@ export default function Header({
   showDropBoxGenres, 
   ToogleDropBoxGenres, 
   showDropBoxNews, 
-  ToogleDropBoxNews
+  ToogleDropBoxNews,
+  showAccount,
+  ToogleShowAccount,
+  isUserLogin,
 }) {
   return (
     <header className="header">
@@ -55,7 +58,11 @@ export default function Header({
             showNewsMenu={showNewsMenu}
             ToogleShowNewsMenu={ToogleShowNewsMenu}
           />
-          <HeaderNavLogin />
+          <HeaderNavLogin
+            showAccount={showAccount}
+            ToogleShowAccount={ToogleShowAccount}
+            isUserLogin={isUserLogin}
+          />
         </nav>
       </div>
     </header>
