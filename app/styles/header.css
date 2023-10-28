@@ -251,6 +251,7 @@
 
 .navegation__login {
   display: flex;
+  align-items: center;
 }
 
 .sbmn-account {
@@ -350,6 +351,31 @@
 .user-avatar {
   height: 5.8rem;
   width: 5.8rem;
+  border-radius: 50%;
+} 
+
+.btn-user-avatar {
+  color: var(--gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.2rem 1.8rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: var(--blackDarken);
+  }
+}
+
+.btn-user-avatar.selected {
+  background-color: var(--blackDarken);
+  color: var(--white);
+}
+
+.img-user-avatar {
+  width: 3.6rem;
   border-radius: 50%;
 } 
 

@@ -30,16 +30,26 @@ export default function HeaderNavLogin({showAccount, ToogleShowAccount, isUserLo
 
       {/* Button Login */}
       <li>
-        <button 
-          className={`btn-nav ${showAccount ? 'selected' : ''}`}
-          onClick={ToogleShowAccount}
-        >
-          <svg className="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"     data-t="user-settings-svg" aria-labelledby="user-settings-svg" aria-hidden="true" role="img"
-            >
-            <title id="user-settings-svg">Menú de la cuenta</title>
-            <path d="M12 20a6.01 6.01 0 0 1-5.966-5.355L12 12.088l5.966 2.557A6.01 6.01 0 0 1 12 20m0-16c1.654 0 3 1.346 3 3s-1.345 3-2.999 3h-.002A3.003 3.003 0 0 1 9 7c0-1.654 1.346-3 3-3m7.394 9.081l-4.572-1.959A4.997 4.997 0 0 0 17 7c0-2.757-2.243-5-5-5S7 4.243 7 7c0 1.71.865 3.22 2.178 4.122l-4.572 1.959A.999.999 0 0 0 4 14c0 4.411 3.589 8 8 8s8-3.589 8-8c0-.4-.238-.762-.606-.919"></path>
-          </svg>
-        </button>
+        {isUserLogin ? (
+          <button 
+            className={`btn-user-avatar ${showAccount ? 'selected' : ''}`}
+            onClick={ToogleShowAccount}
+          >
+            <img src="https://static.crunchyroll.com/assets/avatar/170x170/100003-the-rising-of-the-shield-hero-filo.png" alt="Avatar de usuario" loading="lazy" className="img-user-avatar"/>
+            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="dropdown-svg" aria-labelledby="dropdown-svg" aria-hidden="true" role="img"><title id="dropdown-svg">Menú desplegable</title><path d="M7 10h10l-5 5z"></path></svg>
+          </button>
+        ) : (
+          <button 
+            className={`btn-nav ${showAccount ? 'selected' : ''}`}
+            onClick={ToogleShowAccount}
+          >
+            <svg className="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"     data-t="user-settings-svg" aria-labelledby="user-settings-svg" aria-hidden="true" role="img"
+              >
+              <title id="user-settings-svg">Menú de la cuenta</title>
+              <path d="M12 20a6.01 6.01 0 0 1-5.966-5.355L12 12.088l5.966 2.557A6.01 6.01 0 0 1 12 20m0-16c1.654 0 3 1.346 3 3s-1.345 3-2.999 3h-.002A3.003 3.003 0 0 1 9 7c0-1.654 1.346-3 3-3m7.394 9.081l-4.572-1.959A4.997 4.997 0 0 0 17 7c0-2.757-2.243-5-5-5S7 4.243 7 7c0 1.71.865 3.22 2.178 4.122l-4.572 1.959A.999.999 0 0 0 4 14c0 4.411 3.589 8 8 8s8-3.589 8-8c0-.4-.238-.762-.606-.919"></path>
+            </svg>
+          </button>
+        )}
 
         <div className={`sbmn-account sbmn ${showAccount ? 'sbmn-show' : ''}`} onClick={ToogleShowAccount}>
           {isUserLogin ? (
