@@ -1,5 +1,6 @@
 :root {
   --primary: #f47521;
+  --primary-hover: #ff944d;
   --secondary: DeepSkyBlue;
   --black: #23252b;
   --blackDarken: #141519;
@@ -82,4 +83,41 @@ p {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+/* * GLOBAL BUTTONS */
+
+.btn-fill, .btn-line {
+  display: inline-block;
+  padding: .5rem 1.6rem;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: .2rem solid var(--primary);
+  transition: border 300ms;
+
+  &:hover {
+    border: .2rem solid var(--primary-hover);
+  }
+}
+
+.btn-line {
+  color: var(--primary);
+  background-color: transparent;
+
+  &:hover {
+    color: var(--primary-hover);
+  }
+}
+
+.btn-fill {
+  color: var(--black);
+  background-color: var(--primary);
+  transition: background-color 300ms;
+
+  &:hover {
+    border: .2rem solid var(--primary-hover);
+    background-color: var(--primary-hover);
+  }
 }
