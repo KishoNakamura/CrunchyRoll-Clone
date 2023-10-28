@@ -111,7 +111,9 @@ export default function App() {
           ToogleShowAccount={ToogleShowAccount}
           isUserLogin={isUserLogin}
         />
-        <Outlet />
+        <div onClick={showBrowseMenu ? ToogleShowBrowseMenu : showNewsMenu ? ToogleShowNewsMenu : null}>
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
