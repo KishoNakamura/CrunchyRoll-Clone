@@ -9,8 +9,12 @@ import {
 } from "@remix-run/react";
 import { useState } from "react";
 import Header from "./components/header";
+import Footer from "./components/footer";
+
 import rootStyles from "./styles/root.css";
 import headerStyles from "./styles/header.css";
+import footerStyles from "./styles/footer.css";
+
 import faviconCrunchyLogo from "../public/img/favicon-32x32-CrunchyLogo.png";
 
 export const links = () => [
@@ -39,6 +43,10 @@ export const links = () => [
   {
     rel: "stylesheet",
     href: headerStyles
+  },
+  {
+    rel: "stylesheet",
+    href: footerStyles
   },
   {
     rel: 'icon',
@@ -114,6 +122,7 @@ export default function App() {
         <div onClick={showBrowseMenu ? ToogleShowBrowseMenu : showNewsMenu ? ToogleShowNewsMenu : null}>
           <Outlet />
         </div>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
