@@ -94,11 +94,19 @@ p {
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
+  width: 100%;
+  text-align: center;
   border: .2rem solid var(--primary);
   transition: border 300ms;
 
   &:hover {
     border: .2rem solid var(--primary-hover);
+  }
+}
+
+@media (min-width: 570px) {
+  .btn-fill, .btn-line {
+    width: auto;
   }
 }
 
